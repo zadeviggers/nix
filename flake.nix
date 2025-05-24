@@ -57,20 +57,59 @@
         onActivation.upgrade = true;
       };
 
+      # MacOS settings
       system.defaults = {
-        dock.autohide = true;
-        dock.persistant-apps = [
-          "${pkgs.firefox}/Applications/Firefox.app"
-          "${pkgs.thunderbird}/Applications/Thunderbird.app"
-          "/Applications/Signal.app"
-          "/Applications/Ente Auth.app"
-          "${pkgs.iterm2}/Applications/iTerm.app"
-          "/System/Applications/Activity Monitor.app"
-          "/Applications/GitHub Desktop.app"
-          "${pkgs.vscodium}/Applications/VSCodium.app"
+        dock = {
+          autohide = true;
+          persistant-apps = [
+            "${pkgs.firefox}/Applications/Firefox.app"
+            "${pkgs.thunderbird}/Applications/Thunderbird.app"
+            "/Applications/Signal.app"
+            "/Applications/Ente Auth.app"
+            "${pkgs.iterm2}/Applications/iTerm.app"
+            "/System/Applications/Activity Monitor.app"
+            "/Applications/GitHub Desktop.app"
+            "${pkgs.vscodium}/Applications/VSCodium.app"
+            "${pkgs.reaper}/Applications/REAPER.app"
+            "/System/Applications/System Settings.app"
+          ];
+          # Hot corners
+          wvous-bl-corner = 13; # Bottom left - lock screen
+        };
+        finder.FXPreferredViewStyle = "clmv"; # Column layout
 
-        ]
+        NSGlobalDomain = {
+          AppleLocale = "en_NZ";
+          AppleLanguages = ["en-NZ" "mi-NZ"];
+          AppleShowScrollBars = "Always";
+          AppleScrollerPagingBehavior = 1;
+          AppleInterfaceStyleSwitchesAutomatically = 1;
+          AppleAccentColor = 1;
+          AppleHighlightColor = "1.000000 0.874510 0.701961 Orange";
+          AppleShowAllExtensions = 1;
+        };
       };
+      system.activationScripts.postUserActivation.text = ''
+        # Trackpad
+        defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
+        defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true # tap-to-click
+        defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 1 # hardness
+        defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerTapGesture -int 2 # quick look
+        defaults write com.apple.trackpad.forceClick -bool false
+
+        # Menu bar
+        defaults write com.apple.menuextra.clock ShowSeconds -bool true
+        defaults write com.apple.controlcenter BatteryShowPercentage -bool true
+
+
+        # Restart stuff
+        killall ControlCenter || true
+        killall SystemUIServer || true
+      ''
+
+      # Touch ID for sudo
+      security.pam.services.sudo_local.touchIdAuth = true;
+
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
