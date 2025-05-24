@@ -57,6 +57,20 @@
         onActivation.upgrade = true;
       };
 
+      system.defaults = {
+        dock.autohide = true;
+        dock.persistant-apps = [
+          "${pkgs.firefox}/Applications/Firefox.app"
+          "${pkgs.thunderbird}/Applications/Thunderbird.app"
+          "/Applications/Signal.app"
+          "/Applications/Ente Auth.app"
+          "${pkgs.iterm2}/Applications/iTerm.app"
+          "/System/Applications/Activity Monitor.app"
+          "/Applications/GitHub Desktop.app"
+          "${pkgs.vscodium}/Applications/VSCodium.app"
+
+        ]
+      };
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
