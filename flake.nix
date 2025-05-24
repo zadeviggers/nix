@@ -61,7 +61,7 @@
       system.defaults = {
         dock = {
           autohide = true;
-          persistant-apps = [
+          persistent-apps = [
             "${pkgs.firefox}/Applications/Firefox.app"
             "${pkgs.thunderbird}/Applications/Thunderbird.app"
             "/Applications/Signal.app"
@@ -79,17 +79,17 @@
         finder.FXPreferredViewStyle = "clmv"; # Column layout
 
         NSGlobalDomain = {
-          AppleLocale = "en_NZ";
-          AppleLanguages = ["en-NZ" "mi-NZ"];
+          # AppleLocale = "en_NZ";
+          # AppleLanguages = ["en-NZ" "mi-NZ"];
           AppleShowScrollBars = "Always";
-          AppleScrollerPagingBehavior = 1;
-          AppleInterfaceStyleSwitchesAutomatically = 1;
-          AppleAccentColor = 1;
-          AppleHighlightColor = "1.000000 0.874510 0.701961 Orange";
-          AppleShowAllExtensions = 1;
+          AppleScrollerPagingBehavior = true;
+          AppleInterfaceStyleSwitchesAutomatically = true;
+          # AppleAccentColor = 1;
+          # AppleHighlightColor = "1.000000 0.874510 0.701961 Orange";
+          AppleShowAllExtensions = true;
         };
       };
-      system.activationScripts.postUserActivation.text = ''
+      system.activationScripts.postActivation.text = ''
         # Trackpad
         defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
         defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true # tap-to-click
@@ -101,11 +101,16 @@
         defaults write com.apple.menuextra.clock ShowSeconds -bool true
         defaults write com.apple.controlcenter BatteryShowPercentage -bool true
 
+        # Disable gatekeeper
+        spctl --master-disable
 
         # Restart stuff
         killall ControlCenter || true
         killall SystemUIServer || true
-      ''
+
+        # Apply all settings
+        /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+      '';
 
       # Touch ID for sudo
       security.pam.services.sudo_local.touchIdAuth = true;
