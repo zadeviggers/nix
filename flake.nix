@@ -48,9 +48,9 @@
           "docker"
         ];
         # Mac app store apps
-        # mas = {
-        #   "R101" = 
-        # };
+        masApps = {
+          "R101" = 1519963914;
+        };
         onActivation.cleanup = "zap"; # on install, delete everything that wasn't listed above
       };
 
