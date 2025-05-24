@@ -52,6 +52,9 @@
           "R101" = 1519963914;
         };
         onActivation.cleanup = "zap"; # on install, delete everything that wasn't listed above
+        # Autoupdate
+        onActivation.autoUpdate = true;
+        onActivation.upgrade = true;
       };
 
 
