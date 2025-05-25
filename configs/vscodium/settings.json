@@ -1,0 +1,30 @@
+{
+  "workbench.colorTheme": "Moondust: Near Side of the Moon",
+  "workbench.preferredLightColorTheme": "Moondust: Near Side of the Moon",
+  "workbench.preferredDarkColorTheme": "Moondust: Far Side of the Moon",
+  "workbench.sideBar.location": "right",
+  "workbench.activityBar.location": "bottom",
+  "window.autoDetectColorScheme": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "comment",
+        "settings": {
+          "fontStyle": "italic"
+        }
+      }
+    ]
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  }
+}

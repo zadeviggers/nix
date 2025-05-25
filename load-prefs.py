@@ -5,14 +5,17 @@ print("BANANA!")
 
 username = "zade"
 home_dir = f"/Users/{username}"
+application_support = f"{home_dir}/Library/Application Support"
 
 ignore = [".DS_Store"]
 
-ff_profiles_folder_path = f"{home_dir}/Library/Application Support/Firefox/Profiles"
+ff_profiles_folder_path = f"{application_support}/Firefox/Profiles"
 ff_profile = os.path.join(
     ff_profiles_folder_path,
     list(filter(lambda item: item not in ignore, os.listdir(ff_profiles_folder_path)))[0]
 )
+
+codium_config_dir = f"{application_support}/VSCodium/User"
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 configs_dir = os.path.join(script_dir, "configs")
@@ -42,4 +45,7 @@ for name in os.listdir(configs_dir):
             # Copy into default Firefox profile
             print("Copying Firefox profile")
             move_all_files(folder_path, ff_profile)
+        case "vscodium":
+            print("Copying VSCodium profile")
+            move_all_files(folder_path, codium_dir)
 

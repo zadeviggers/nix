@@ -18,7 +18,15 @@
 
       # Nix packages
       environment.systemPackages =
-        [ pkgs.vscodium
+        [
+          (pkgs.vscode-with-extensions.override {
+            vscode = pkgs.vscodium;
+            vscodeExtensions = with pkgs.vscode-extensions; [
+              bbenoist.nix
+              # vanyauhalin.moondusttheme
+              esbenp.prettier-vscode
+            ];
+          })
           pkgs.iterm2
           pkgs.firefox
           pkgs.thunderbird
