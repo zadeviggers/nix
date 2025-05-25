@@ -110,6 +110,9 @@
 
         # Apply all settings
         /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+      
+        # Load preference files for apps
+        python3 ${./load-prefs.py}
       '';
 
       # Touch ID for sudo

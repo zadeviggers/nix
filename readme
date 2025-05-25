@@ -1,0 +1,8 @@
+To build & configure system:
+
+    sudo darwin-rebuild switch --flake ~/nix#cooked
+
+Or to just load preference files:
+
+    python3 ./load-prefs.py
+    
