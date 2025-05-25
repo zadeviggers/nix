@@ -1,5 +1,5 @@
 {
-  description = "Example nix-darwin system flake";
+  description = "Cooked nix-darwin system flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -74,8 +74,8 @@
             "${pkgs.thunderbird}/Applications/Thunderbird.app"
             "/Applications/Signal.app"
             "/Applications/Ente Auth.app"
-            "${pkgs.iterm2}/Applications/iTerm.app"
-            "/System/Applications/Activity Monitor.app"
+            "${pkgs.iterm2}/Applications/iTerm2.app"
+            "/System/Applications/Utilities/Activity Monitor.app"
             "/Applications/GitHub Desktop.app"
             "${pkgs.vscodium}/Applications/VSCodium.app"
             "${pkgs.reaper}/Applications/REAPER.app"
@@ -121,6 +121,9 @@
       
         # Load preference files for apps
         python3 ${./load-prefs.py}
+
+        # Set wallpaper
+        # wallpaper
       '';
 
       # Touch ID for sudo
