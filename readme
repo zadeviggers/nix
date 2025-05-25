@@ -2,6 +2,10 @@ To build & configure system:
 
     sudo darwin-rebuild switch --flake ~/nix#cooked
 
+Or boostrap nix-darwin
+
+    sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake ~/nix#cooked
+
 Or to just load preference files:
 
     python3 ./load-prefs.py
