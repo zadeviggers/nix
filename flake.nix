@@ -51,7 +51,7 @@
         casks = [
           "github" # Github Desktop
           "signal"
-          # "ente-auth"
+          "ente-auth"
           "vlc"
           "docker"
         ];
