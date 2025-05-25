@@ -1,3 +1,16 @@
+=== Easy way ===
+
+Fresh machine setup:
+
+    ./fresh-install.sh
+
+Rebuild after first setup:
+
+    ./rebuild.sh
+    
+
+=== Actual Nix commands ===
+
 To build & configure system:
 
     sudo darwin-rebuild switch --flake ~/nix#cooked

@@ -1,3 +1,5 @@
+#! /bin/sh
+
 echo "Setting everything up! First let's install Nix"
 # Install Nix
 sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install)
