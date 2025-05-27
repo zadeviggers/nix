@@ -7,7 +7,7 @@ sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install)
 exec zsh
 echo "Now we'll build apps & system settings"
 # Build system
-sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake ~/nix#cooked
+sudo nix run --extra-experimental-features "nix-command flakes" nix-darwin/master#darwin-rebuild -- switch --flake ~/nix#cooked
 echo "Lastly, gotta copy over app configs"
 python3 load-prefs.py
 echo "Done setting up system!"
