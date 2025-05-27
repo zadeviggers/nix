@@ -109,29 +109,48 @@
       };
       system.activationScripts.postActivation.text = ''
         # Trackpad
-        defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
-        defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true # tap-to-click
+        defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool "true"
+        defaults write com.apple.AppleMultitouchTrackpad Clicking -bool "true" # tap-to-click
         defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 1 # hardness
         defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerTapGesture -int 2 # quick look
-        defaults write com.apple.trackpad.forceClick -bool false
+        defaults write com.apple.trackpad.forceClick -bool "false"
+
+        # Keyboard
+        defaults write com.apple.HIToolbox AppleFnUsageType -int "2" # make globe key show emoji picker
 
         # Menu bar
-        defaults write com.apple.menuextra.clock ShowSeconds -bool true
-        defaults write com.apple.controlcenter BatteryShowPercentage -bool true
+        defaults write com.apple.menuextra.clock ShowSeconds -bool "true"
+        defaults write com.apple.controlcenter BatteryShowPercentage -bool "true"
 
+        # Finder
+        defaults write com.apple.finder "FXRemoveOldTrashItems" -bool "true" # Empty bin after 30 days
+        defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"  # show file extensions
+        defaults write com.apple.finder "AppleShowAllFiles" -bool "true" # Show hidden files
+  
+        # App minimise effect
+        defaults write com.apple.dock "mineffect" -string "suck"
+
+        # Make TextEdit use plain text
+        defaults write com.apple.TextEdit "RichText" -bool "false"
+        
         # Disable gatekeeper
         spctl --master-disable
 
+        # Dock
+        defaults write com.apple.dock "scroll-to-open" -bool "true"
+
         # Restart stuff
-        killall ControlCenter || true
-        killall SystemUIServer || true
+        killall ControlCenter || "true"
+        killall SystemUIServer || "true"
+        killall Finder || "true"
+        killall Dock || "true"
 
         # Apply all settings
         /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
       '';
 
       # Touch ID for sudo
-      security.pam.services.sudo_local.touchIdAuth = true;
+      security.pam.services.sudo_local.touchIdAuth = "true";
 
 
       # Necessary for using flakes on this system.
