@@ -40,6 +40,7 @@
           pkgs.ffmpeg
           pkgs.transmission_4
           pkgs.prismlauncher
+          pkgs.deno
         ];
 
       # Homebrew packages
@@ -52,6 +53,7 @@
           "node"
           "pnpm"
           "python"
+          "docker-compose"
         ];
         # Regular casks
         casks = [
