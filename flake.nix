@@ -56,8 +56,9 @@
         # Regular casks
         casks = [
           "github" # Github Desktop
-          "signal"
+          "shottr"
           "ente-auth"
+          "signal"
           "vlc"
           "docker"
           "microsoft-powerpoint"
