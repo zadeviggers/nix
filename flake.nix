@@ -7,11 +7,17 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     mac-app-util.url = "github:hraban/mac-app-util";
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 
-  outputs = inputs@{ self, nix-darwin, mac-app-util, nix-homebrew, nixpkgs }:
+  outputs = inputs@{ self, nix-darwin, mac-app-util, nix-homebrew, nixpkgs, nix-vscode-extensions }:
   let
     configuration = { pkgs, config, ... }: {
+
+      # Inject vscode extensions into pkgs
+      nixpkgs.overlays = [
+        nix-vscode-extensions.overlays.default
+      ];
       
       # Pedantic OSS purist stuff
       nixpkgs.config.allowUnfree = true;
@@ -21,10 +27,10 @@
         [
           (pkgs.vscode-with-extensions.override {
             vscode = pkgs.vscodium;
-            vscodeExtensions = with pkgs.vscode-extensions; [
-              bbenoist.nix
-              # vanyauhalin.moondusttheme
-              esbenp.prettier-vscode
+            vscodeExtensions = [
+              pkgs.vscode-marketplace.bbenoist.nix
+              pkgs.vscode-marketplace.vanyauhalin.moondusttheme
+              pkgs.vscode-marketplace.esbenp.prettier-vscode
             ];
           })
           pkgs.iterm2
