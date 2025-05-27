@@ -54,6 +54,10 @@
           "ente-auth"
           "vlc"
           "docker"
+          "microsoft-powerpoint"
+          "microsoft-excel"
+          "microsoft-word"
+          "onedrive"
         ];
         # Mac app store apps
         masApps = {
