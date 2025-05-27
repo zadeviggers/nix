@@ -153,7 +153,7 @@
       '';
 
       # Touch ID for sudo
-      security.pam.services.sudo_local.touchIdAuth = "true";
+      security.pam.services.sudo_local.touchIdAuth = true;
 
 
       # Necessary for using flakes on this system.
