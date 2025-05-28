@@ -41,6 +41,7 @@
           pkgs.transmission_4
           pkgs.prismlauncher
           pkgs.deno
+          pkgs.postgresql
         ];
 
       # Homebrew packages
