@@ -55,3 +55,4 @@ user_pref("sidebar.position_start", false);
 user_pref("sidebar.revamp", true);
 user_pref("sidebar.verticalTabs", true);
 user_pref("browser.toolbarbuttons.introduced.sidebar-button", false);
+user_pref("dom.private-attribution.submission.enabled", false);
