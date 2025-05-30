@@ -17,6 +17,7 @@
       # Inject vscode extensions into pkgs
       nixpkgs.overlays = [
         nix-vscode-extensions.overlays.default
+        # (import ./overlays/firefox.nix)
       ];
       
       # Pedantic OSS purist stuff
@@ -35,6 +36,7 @@
           })
           pkgs.iterm2
           pkgs.firefox
+          # pkgs.firefox-moz-build
           pkgs.thunderbird
           pkgs.reaper
           pkgs.ffmpeg
@@ -55,6 +57,7 @@
           "pnpm"
           "python"
           "docker-compose"
+          "qgis"
         ];
         # Regular casks
         casks = [
