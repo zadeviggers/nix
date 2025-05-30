@@ -95,7 +95,6 @@
             "/System/Applications/Utilities/Activity Monitor.app"
             "/Applications/GitHub Desktop.app"
             "${pkgs.vscodium}/Applications/VSCodium.app"
-            "${pkgs.reaper}/Applications/REAPER.app"
             "/System/Applications/System Settings.app"
           ];
           # Hot corners
