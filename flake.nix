@@ -49,16 +49,6 @@
       # Homebrew packages
       homebrew = {
         enable = true;
-        # Regular homebrew cli tools
-        brews = [
-          "mas" # Utility for getting mac app store IDs
-          "cloudflared"
-          "node"
-          "pnpm"
-          "python"
-          "docker-compose"
-          "qgis"
-        ];
         # Regular casks
         casks = [
           "github" # Github Desktop
@@ -70,7 +60,17 @@
           "microsoft-powerpoint"
           "microsoft-excel"
           "microsoft-word"
+          "qgis"
           "onedrive"
+        ];
+        # Regular homebrew cli tools
+        brews = [
+          "mas" # Utility for getting mac app store IDs
+          "cloudflared"
+          "node"
+          "pnpm"
+          "python"
+          "docker-compose"
         ];
         # Mac app store apps
         masApps = {
