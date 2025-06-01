@@ -45,6 +45,7 @@
           pkgs.prismlauncher
           pkgs.deno
           pkgs.postgresql
+          pkgs.sfizz # Sound font loader
         ];
 
       # Homebrew packages
