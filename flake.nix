@@ -40,8 +40,8 @@
           pkgs.thunderbird
           pkgs.reaper
           pkgs.ffmpeg
-          # pkgs.transmission_4
-          pkgs.transmission_4-qt # NixOS people are pedantic and dumb
+          # Tranismission should work, idk why it doesn't
+          # pkgs.transmission_4-qt 
           pkgs.prismlauncher
           pkgs.deno
           pkgs.postgresql
@@ -63,6 +63,7 @@
           "microsoft-word"
           "qgis"
           "onedrive"
+          "transmission"
         ];
         # Regular homebrew cli tools
         brews = [
