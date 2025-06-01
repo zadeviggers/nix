@@ -40,7 +40,8 @@
           pkgs.thunderbird
           pkgs.reaper
           pkgs.ffmpeg
-          pkgs.transmission_4
+          # pkgs.transmission_4
+          pkgs.transmission_4-qt # NixOS people are pedantic and dumb
           pkgs.prismlauncher
           pkgs.deno
           pkgs.postgresql

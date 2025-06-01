@@ -2,11 +2,11 @@
 
 Fresh machine setup:
 
-    ./fresh-install.sh
+    ./fresh-install
 
 Rebuild after first setup:
 
-    ./rebuild.sh
+    ./rebuild
     
 
 === Actual Nix commands ===

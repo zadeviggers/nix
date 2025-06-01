@@ -1,4 +1,4 @@
-#! /bin/sh
+#! sh
 
 echo "Rebuilding system!"
 sudo darwin-rebuild switch --flake ~/nix#cooked
