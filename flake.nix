@@ -45,7 +45,8 @@
           pkgs.prismlauncher
           pkgs.deno
           pkgs.postgresql
-          pkgs.sfizz # Sound font loader
+          # TODO: Make this build on mac
+          # pkgs.sfizz # Sound font loader
         ];
 
       # Homebrew packages
