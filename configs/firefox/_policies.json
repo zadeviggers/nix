@@ -1,0 +1,11 @@
+{
+  "policies": {
+    "DisableAppUpdate": true,
+    "DisableFirefoxStudies": true,
+    "DisablePocket":true,
+    "DisableTelemetry":true,
+    "OverrideFirstRunPage": "https://zade.viggers.net/|https://www.mozilla.org/en-US/firefox/releasenotes/",
+    "OverridePostUpdatePage": "https://www.mozilla.org/en-US/firefox/releasenotes/",
+    "RequestedLocales": ["en-GB"]
+  }
+}
