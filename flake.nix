@@ -8,16 +8,19 @@
     mac-app-util.url = "github:hraban/mac-app-util";
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    nixpkgs-firefox-darwin.url = "github:bandithedoge/nixpkgs-firefox-darwin";
   };
 
-  outputs = inputs@{ self, nix-darwin, mac-app-util, nix-homebrew, nixpkgs, nix-vscode-extensions }:
+  outputs = inputs@{ self, nix-darwin, mac-app-util, nix-homebrew, nixpkgs, nix-vscode-extensions, ... }:
   let
     configuration = { pkgs, config, ... }: {
 
       # Inject vscode extensions into pkgs
       nixpkgs.overlays = [
         nix-vscode-extensions.overlays.default
-        # (import ./overlays/firefox.nix)
+        # nixpkgs doesn't have Mozilla's Firefox builds,
+        # which have macos passkey support, so need this overlay
+        inputs.nixpkgs-firefox-darwin.overlay
       ];
       
       # Pedantic OSS purist stuff
@@ -35,8 +38,7 @@
             ];
           })
           pkgs.iterm2
-          pkgs.firefox
-          # pkgs.firefox-moz-build
+          pkgs.firefox-bin
           pkgs.thunderbird
           pkgs.reaper
           pkgs.ffmpeg
@@ -91,7 +93,7 @@
         dock = {
           autohide = true;
           persistent-apps = [
-            "${pkgs.firefox}/Applications/Firefox.app"
+            "${pkgs.firefox-bin}/Applications/Firefox.app"
             "${pkgs.thunderbird}/Applications/Thunderbird.app"
             "/Applications/Signal.app"
             "/Applications/Ente Auth.app"

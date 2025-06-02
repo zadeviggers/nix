@@ -14,12 +14,13 @@ ignore = [".DS_Store"]
 
 configs_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "configs")
 
-def get_first_profile_moz(folder_path):
+def get_profile_moz(product):
+    folder_path = os.path.join(application_support, product)
     profiles_path = os.path.join(
         folder_path,
         "Profiles",
     )
-    print(profiles_path)
+
     profile_folders = []
     for name in os.listdir(profiles_path):
         if name in ignore:
@@ -29,18 +30,29 @@ def get_first_profile_moz(folder_path):
             profiles_path,
             name
         )
-
-        print(full_path)
-
         
         if not os.path.isdir(full_path):
             continue
         
         profile_folders.append(full_path)
 
-    print(profile_folders)
-        
-    return profile_folders[0]
+    if len(profile_folders) > 1:
+        print()
+        print(f"Multiple {product} profiles found")
+        counter = 1
+        for folder in profile_folders:
+            print(f"{counter}. {folder}")
+            counter += 1
+
+        print("Which profile folder number should be targeted?")
+
+        folder = int(input("> "))
+        return profile_folders[folder-1]
+    elif len(profile_folders) == 1:
+        return profile_folders[0]
+    else:
+        print(f"No {product} profiles found!")
+        return None
 
 def move_all_files(from_folder: str, to_folder: str):
     for filename in os.listdir(from_folder):
@@ -64,16 +76,18 @@ for name in os.listdir(configs_dir):
             move_all_files(folder_path, home_dir)
         case "firefox":
             # Copy into default Firefox profile
-            print("Copying Firefox profile")
-            ff_profile = get_first_profile_moz(f"{application_support}/Firefox")
-            move_all_files(folder_path, ff_profile)
+            ff_profile = get_profile_moz("Firefox")
+            if ff_profile is not None:
+                print("Copying Firefox profile")
+                move_all_files(folder_path, ff_profile)
         case "vscodium":
             print("Copying VSCodium profile")
             codium_config_dir = f"{application_support}/VSCodium/User"
             move_all_files(folder_path, codium_config_dir)
         case "thunderbird":
             # Copy into default TB profile
-            print("Copying Thunderbird profile")
-            tb_profile = get_first_profile_moz(f"{application_support}/Thunderbird")
-            move_all_files(folder_path, tb_profile)
+            tb_profile = get_profile_moz("Thunderbird")
+            if tb_profile is not None:
+                print("Copying Thunderbird profile")
+                move_all_files(folder_path, tb_profile)
 
