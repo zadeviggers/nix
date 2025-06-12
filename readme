@@ -23,3 +23,7 @@ Or to just load preference files:
 
     python3 ./load-prefs.py
     
+Upgrade & rebuild
+
+    sudo nix flake update
+    ./rebuild
