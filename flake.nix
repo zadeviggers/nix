@@ -68,6 +68,7 @@
           "qgis"
           "onedrive"
           "transmission"
+          "scroll-reverser"
         ];
         # Regular homebrew cli tools
         brews = [
