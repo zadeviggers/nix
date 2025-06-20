@@ -1,3 +1,8 @@
+/* Make sidebar drag  */
+#sidebar-main {
+  -moz-window-dragging: drag;
+}
+
 /* Main transparency */
 :root {
   appearance: -moz-sidebar !important;
