@@ -1,0 +1,30 @@
+/* Main transparency */
+:root {
+    appearance: -moz-sidebar !important;
+}
+
+/* From GlassFox theme */
+:root:not([windowtype="Toolkit:PictureInPicture"],
+[inDOMFullscreen]) {
+  #browser {
+    #sidebar-main, #tabbrowser-tabbox {
+      #tabbrowser-tabpanels {
+        background: transparent !important;
+      }
+    }
+  }
+  #navigator-toolbox {
+    mix-blend-mode: screen;
+    > * {
+      background: inherit !important;
+    }
+  }
+}
+
+/* Disable shadow around page content */
+#tabbrowser-tabbox {
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 0px !important;
+    border-top-right-radius: 10px !important;
+}

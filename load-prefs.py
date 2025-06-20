@@ -61,8 +61,12 @@ def move_all_files(from_folder: str, to_folder: str):
         source_path = os.path.join(from_folder, filename)
         destination_path = os.path.join(to_folder, filename)
 
-        # `copy2` wipes metadata, compared to regular `copy``
-        shutil.copy2(source_path, destination_path)
+        if os.path.isdir(source_path):
+            # Move folders
+            shutil.copytree(source_path, destination_path, dirs_exist_ok=True)
+        else:
+            # `copy2` wipes metadata, compared to regular `copy``
+            shutil.copy2(source_path, destination_path)
 
 for name in os.listdir(configs_dir):
     if name in ignore:

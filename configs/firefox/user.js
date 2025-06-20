@@ -12,7 +12,7 @@ user_pref("browser.newtabpage.activity-stream.newtabShortcuts.refresh", true);
 user_pref("browser.newtabpage.activity-stream.newtabWallpapers.customColor.enabled", true);
 user_pref("browser.newtabpage.activity-stream.newtabWallpapers.customWallpaper.enabled", true);
 user_pref("browser.newtabpage.activity-stream.newtabWallpapers.wallpaper", "palm-trees");
-// user_pref("browser.newtabpage.activity-stream.weather.display", "none");
+user_pref("browser.newtabpage.activity-stream.showWeather", false);
 user_pref("browser.newtabpage.activity-stream.showSearch", false);
 user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
 user_pref("browser.newtabpage.pinned", "[{\"url\":\"https://www.youtube.com/\",\"baseDomain\":\"youtube.com\"},{\"url\":\"https://www.instagram.com/\",\"baseDomain\":\"instagram.com\"},{\"url\":\"https://www.tsb.co.nz/\",\"baseDomain\":\"tsb.co.nz\"},{\"url\":\"https://onedrive.live.com/\",\"baseDomain\":\"onedrive.live.com\"},null,{\"url\":\"https://news.ycombinator.com/\",\"baseDomain\":\"news.ycombinator.com\"},{\"url\":\"https://discord.com/app\",\"baseDomain\":\"discord.com\"},{\"url\":\"https://nuku.wgtn.ac.nz/\",\"label\":\"nuku.wgtn\",\"baseDomain\":\"nuku.wgtn.ac.nz\"}]");
@@ -56,3 +56,11 @@ user_pref("sidebar.revamp", true);
 user_pref("sidebar.verticalTabs", true);
 user_pref("browser.toolbarbuttons.introduced.sidebar-button", false);
 user_pref("dom.private-attribution.submission.enabled", false);
+user_pref("browser.tabs.allow_transparent_browser", true);
+user_pref("widget.macos.titlebar-blend-mode.behind-window", true);
+user_pref("widget.macos.sidebar-blend-mode.behind-window", true);
+ // use for firefox 133+
+// user_pref("browser.theme.native-theme", true);
+// user_pref("browser.theme.macos.native-theme", true);
+// Enable userChrome.css
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
