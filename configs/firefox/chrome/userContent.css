@@ -3,8 +3,8 @@
         background: transparent !important;
         scrollbar-width: none !important;
     }
-    *, .darkWallpaper {
-        color-scheme: light !important;
+    * {
+        color-scheme: light-dark(light, dark) !important;
     }
     .wallpaper-attribution, .personalize-button, .personalizeButtonWrapper {
         display: none !important;
