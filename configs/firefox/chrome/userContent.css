@@ -14,3 +14,9 @@
 html, body {
     background-color: light-dark(white, black);
 }
+
+@-moz-document domain("kagi.com") {
+    html, body {
+        background: light-dark(white, black) !important;
+    }
+}
