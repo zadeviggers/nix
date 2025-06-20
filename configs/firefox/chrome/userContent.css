@@ -1,4 +1,4 @@
-@-moz-document url-prefix("about:newtab") {
+@-moz-document url-prefix("about:newtab"), url-prefix("about:privatebrowsing") {
     html, body {
         background: transparent !important;
         scrollbar-width: none !important;
