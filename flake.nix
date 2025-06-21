@@ -69,6 +69,7 @@
           "onedrive"
           "transmission"
           "scroll-reverser"
+          "sf-symbols"
         ];
         # Regular homebrew cli tools
         brews = [
