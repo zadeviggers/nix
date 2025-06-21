@@ -60,7 +60,7 @@ user_pref("browser.tabs.allow_transparent_browser", true);
 user_pref("widget.macos.titlebar-blend-mode.behind-window", true);
 user_pref("widget.macos.sidebar-blend-mode.behind-window", true);
  // use for firefox 133+
-// user_pref("browser.theme.native-theme", true);
-// user_pref("browser.theme.macos.native-theme", true);
+user_pref("browser.theme.native-theme", true);
+user_pref("browser.theme.macos.native-theme", true);
 // Enable userChrome.css
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
