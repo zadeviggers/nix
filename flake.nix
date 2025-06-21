@@ -82,8 +82,9 @@
         # Mac app store apps
         masApps = {
           "r-101" = 1519963914;
+          "Xcode" = 497799835;
         };
-        onActivation.cleanup = "zap"; # on install, delete everything that wasn't listed above
+        onActivation.cleanup = "zap"; # delete everything that wasn't listed above
         # Autoupdate
         onActivation.autoUpdate = true;
         onActivation.upgrade = true;
