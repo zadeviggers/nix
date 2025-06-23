@@ -41,7 +41,9 @@
           pkgs.firefox-bin
           pkgs.thunderbird
           pkgs.reaper
-          pkgs.ffmpeg
+          pkgs.ffmpeg-full
+          # Include headers and stuff
+          pkgs.ffmpeg-full.dev
           # Tranismission should work, idk why it doesn't
           # pkgs.transmission_4-qt 
           pkgs.prismlauncher
