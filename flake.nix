@@ -38,7 +38,8 @@
             ];
           })
           pkgs.iterm2
-          pkgs.firefox-bin
+          # This is from the Overlay that pulls straight from Mozilla's builds
+          pkgs.firefox-bin 
           pkgs.thunderbird
           pkgs.reaper
           # Tranismission should work, idk why it doesn't
@@ -69,6 +70,8 @@
           "transmission"
           "scroll-reverser"
           "sf-symbols"
+          "steam"
+          "chromium"
         ];
         # Regular homebrew cli tools
         brews = [
