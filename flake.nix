@@ -49,6 +49,7 @@
           pkgs.postgresql
           # TODO: Make this build on mac
           # pkgs.sfizz # Sound font loader
+          pkgs.openfortivpn
         ];
 
       # Homebrew packages
@@ -71,7 +72,9 @@
           "scroll-reverser"
           "sf-symbols"
           "steam"
-          "chromium"
+          "google-chrome@canary"
+          "godot"
+          "blender"
         ];
         # Regular homebrew cli tools
         brews = [
