@@ -75,6 +75,7 @@
           "google-chrome@canary"
           "godot"
           "blender"
+          "postgres-unofficial"
         ];
         # Regular homebrew cli tools
         brews = [
