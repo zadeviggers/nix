@@ -39,7 +39,8 @@
           })
           pkgs.iterm2
           # This is from the Overlay that pulls straight from Mozilla's builds
-          pkgs.firefox-bin 
+          pkgs.firefox-bin
+          pkgs.firefox-nightly-bin 
           pkgs.thunderbird
           pkgs.reaper
           # Tranismission should work, idk why it doesn't
