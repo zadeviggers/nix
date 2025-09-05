@@ -77,6 +77,7 @@
           "godot"
           "blender"
           "postgres-unofficial"
+          "kdenlive"
         ];
         # Regular homebrew cli tools
         brews = [
