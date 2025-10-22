@@ -74,7 +74,7 @@
           "sf-symbols"
           "steam"
           "google-chrome@canary"
-          "godot@4.4"
+          "godot"
           "blender"
           "postgres-unofficial"
           "kdenlive"
